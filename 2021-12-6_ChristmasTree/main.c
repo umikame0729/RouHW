@@ -68,10 +68,25 @@ void printTreeRoot(int n, int w, int h)
 
 int main()
 {
-    printTree(10, 1, 5);
-    printTree(10, 3, 7);
-    printTree(10, 5, 9);
-    printTreeRoot(10, 3, 3);
+    int layer = 1;
+    int group = (layer / 3) + 1;
+    int offset = layer % 3;
+
+    for (int g = 0; g < group; g++)
+    {
+        if (g == group - 1)
+        {
+        }
+        else
+        {
+            printTree(layer, g * 2 + 1, g * 2 + 1 + offset * 2 - 1);
+        }
+    }
+
+    // printTree(10, 1, 5);
+    // printTree(10, 3, 7);
+    // printTree(10, 5, 9);
+    // printTreeRoot(10, 3, 3);
 
     return 0;
 }
